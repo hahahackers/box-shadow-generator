@@ -1,0 +1,39 @@
+{
+  "name": "box-shadow-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-per-env",
+    "start:development": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catsonis/box-shadow-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catsonis/box-shadow-generator/issues"
+  },
+  "homepage": "https://github.com/catsonis/box-shadow-generator#readme",
+  "dependencies": {
+    "gatsby": "2.18.25",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-helmet": "5.2.1",
+    "gatsby-plugin-alias-imports": "1.0.5",
+    "gatsby-plugin-react-helmet": "3.1.21",
+    "displacejs": "1.4.1",
+    "lodash": "4.17.15"
+  },
+  "devDependencies": {
+    "cross-per-env": "1.0.5",
+    "@catsonis/prettier-config": "1.0.1",
+    "@catsonis/generator": "0.0.8"
+  },
+  "prettier": "@catsonis/prettier-config"
+}

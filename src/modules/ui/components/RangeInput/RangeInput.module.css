@@ -1,0 +1,62 @@
+:root {
+  --slider-color: 'red';
+}
+
+.root {
+  appearance: none;
+  height: 20px;
+  width: 101px; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+  cursor: pointer;
+  margin: 8px;
+}
+
+.root::-webkit-slider-thumb {
+  appearance: none;
+}
+
+.root:focus {
+  outline: none;
+}
+
+.root::-webkit-slider-thumb {
+  border: 1px solid white;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: mediumpurple;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+.root::after::-webkit-slider-thumb {
+  content: '';
+  width: 10px;
+  height: 10px;
+  left: 10px;
+  border-radius: 50%;
+  background: rebeccapurple;
+}
+
+.root:hover::-webkit-slider-thumb {
+  box-shadow: 0 0 2px 0 mediumpurple;
+}
+
+.root:active::-webkit-slider-thumb {
+  box-shadow: 0 0 4px 2px mediumpurple;
+}
+
+.root::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  /*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;*/
+  background: #999;
+  border-radius: 2px;
+  /*border: 0.2px solid #010101;*/
+}
+
+.root:active::-webkit-slider-runnable-track {
+  background: mediumpurple;
+}

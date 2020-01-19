@@ -1,0 +1,17 @@
+:root {
+  --block-margin: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  font-family: Rubik, sans-serif;
+}

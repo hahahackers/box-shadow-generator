@@ -1,0 +1,50 @@
+:root {
+  --zone-width: 101px;
+  --thumb-radius: 16px;
+  --safe-area-width: calc(var(--zone-width) + var(--thumb-radius));
+  --center: calc(var(--safe-area-width) / 2 - var(--thumb-radius) / 2);
+
+  --grid-color: lightgray;
+}
+
+/* -- Safe Area ------------------------------------------------------------- */
+.root {
+  width: var(--safe-area-width);
+  height: var(--safe-area-width);
+  /*background-color: rgba(255, 0, 0, 0.16);*/
+  position: relative;
+}
+
+.root::before {
+  content: '';
+  display: block;
+  left: calc(var(--thumb-radius) / 2);
+  top: calc(var(--thumb-radius) / 2);
+  width: var(--zone-width);
+  height: var(--zone-width);
+  background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 2px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 2px);
+  background-size: 50px 50px;
+  position: relative;
+}
+
+.thumb {
+  width: var(--thumb-radius);
+  height: var(--thumb-radius);
+  top: var(--center);
+  left: var(--center);
+  border: 1px solid white;
+  transition: box-shadow 0.2s;
+  border-radius: 50%;
+  background-color: mediumpurple;
+  position: absolute;
+  cursor: pointer;
+}
+
+.thumb:hover {
+  box-shadow: 0 0 2px 0 mediumpurple;
+}
+
+.thumb:active {
+  box-shadow: 0 0 4px 2px mediumpurple;
+}

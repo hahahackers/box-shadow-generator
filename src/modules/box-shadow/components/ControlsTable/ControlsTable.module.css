@@ -1,0 +1,12 @@
+.root td:nth-of-type(1) {
+  width: 64px;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 4px;
+}
+
+.root td:nth-of-type(3) {
+  width: 12px;
+  font-size: 10px;
+  padding-left: 2px;
+}
