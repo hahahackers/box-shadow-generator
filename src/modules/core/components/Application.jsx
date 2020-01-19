@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BoxShadowGenerator } from 'Modules/box-shadow'
+import { BoxShadowGenerator } from 'modules/box-shadow'
 
 import css from './Application.module.css'
 

@@ -12,9 +12,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
-        alias: {
-          ...config.resolve.alias
-        }
+        alias: config.resolve.alias,
+        extensions: config.resolve.extensions
       }
     }
   ]
