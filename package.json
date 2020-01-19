@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cross-per-env",
     "start:development": "gatsby develop",
+    "build": "gatsby build --prefix-paths",
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate": "generate"
   },

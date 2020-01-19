@@ -1,6 +1,12 @@
 let config = require('./webpack.config.js')
 
 module.exports = {
+  pathPrefix: '/box-shadow-generator',
+  siteMetadata: {
+    title: 'Box Shadow Generator',
+    description: 'Box Shadow Generator',
+    author: '@catsonis'
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
