@@ -29,7 +29,12 @@ export const ShapeControls = props => {
             </td>
             <td>px</td>
             <td>
-              <RangeInput name="width" value={props.shape.width} onChange={handleChange} />
+              <RangeInput
+                name="width"
+                value={props.shape.width}
+                onChange={handleChange}
+                max={200}
+              />
             </td>
           </tr>
           <tr>
@@ -38,6 +43,14 @@ export const ShapeControls = props => {
               <NumberInput name="height" value={props.shape.height} onChange={handleChange} />
             </td>
             <td>px</td>
+            <td>
+              <RangeInput
+                name="height"
+                value={props.shape.height}
+                onChange={handleChange}
+                max={200}
+              />
+            </td>
           </tr>
         </tbody>
       </ControlsTable>

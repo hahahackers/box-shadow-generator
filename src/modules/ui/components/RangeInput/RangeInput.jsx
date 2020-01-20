@@ -23,7 +23,6 @@ export const RangeInput = props => {
       className={css.root}
       ref={inputRef}
       type="range"
-      max={20}
       value={props.value}
       onChange={handleChange}
       onFocus={handleFocus}
