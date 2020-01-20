@@ -28,7 +28,7 @@ export const ShapeControls = props => {
               <NumberInput name="width" value={props.shape.width} onChange={handleChange} />
             </td>
             <td>px</td>
-            <td>
+            <td>r
               <RangeInput
                 name="width"
                 value={props.shape.width}

@@ -72,7 +72,7 @@ export const BoxShadowGenerator = () => {
                 </td>
                 <td>px</td>
                 <td>
-                  <RangeInput value={blurRadius} onChange={setBlurRadius} />
+                  <RangeInput value={blurRadius} onChange={setBlurRadius} max={20} />
                 </td>
                 <td>
                   <button className={css.button} onClick={() => setBlurRadius(0)}>
@@ -87,7 +87,7 @@ export const BoxShadowGenerator = () => {
                 </td>
                 <td>px</td>
                 <td>
-                  <RangeInput value={spreadRadius} onChange={setSpreadRadius} />
+                  <RangeInput value={spreadRadius} onChange={setSpreadRadius} max={20} />
                 </td>
                 <td>
                   <button className={css.button} onClick={() => setSpreadRadius(0)}>
