@@ -10,6 +10,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-page-creator',
+      options: {
+        path: `${__dirname}/app/pages`
+      }
+    },
+    {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: config.resolve.alias,
