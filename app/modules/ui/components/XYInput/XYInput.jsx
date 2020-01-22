@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from 'react'
 import displace from 'displacejs'
 
-import css from './XYInput.module.css'
 import { transformCoordToPixelValue, transformPixelValueToCoord } from './XYInput.utils'
+
+import css from './XYInput.module.css'
 
 export const XYInput = props => {
   let dragZoneRef = useRef(null)

@@ -1,16 +1,12 @@
 import React from 'react'
 
 import { NumberInput, RangeInput, Title } from 'modules/ui'
+import { ControlsTable } from 'modules/box-shadow'
 
 import css from './ShapeControls.module.css'
-import { ControlsTable } from 'modules/box-shadow'
 
 export const ShapeControls = props => {
   function handleChange(value, event) {
-    console.log('ShapeControls :: 10', {
-      ...props.shape,
-      [event.target.name]: value
-    })
     props.onChange({
       ...props.shape,
       [event.target.name]: value
@@ -28,7 +24,7 @@ export const ShapeControls = props => {
               <NumberInput name="width" value={props.shape.width} onChange={handleChange} />
             </td>
             <td>px</td>
-            <td>r
+            <td>
               <RangeInput
                 name="width"
                 value={props.shape.width}

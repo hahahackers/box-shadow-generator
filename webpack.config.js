@@ -4,7 +4,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      modules: path.resolve(__dirname, './src/modules')
+      layouts: path.resolve(__dirname, './app/layouts'),
+      modules: path.resolve(__dirname, './app/modules')
     }
   }
 }
