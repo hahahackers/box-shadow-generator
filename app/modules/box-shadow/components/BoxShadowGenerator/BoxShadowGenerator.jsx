@@ -11,7 +11,7 @@ export const BoxShadowGenerator = () => {
   let [offsetX, setOffsetX] = useState(4)
   let [offsetY, setOffsetY] = useState(4)
 
-  let [color, setColor] = useState('black')
+  let [color] = useState('black')
   let [blurRadius, setBlurRadius] = useState(0)
   let [spreadRadius, setSpreadRadius] = useState(0)
 
