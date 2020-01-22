@@ -23,7 +23,7 @@ export const XYInput = props => {
     return () => {
       a.destroy()
     }
-  })
+  }, [])
 
   const left = transformCoordToPixelValue(props.value.x)
   const top = transformCoordToPixelValue(props.value.y)

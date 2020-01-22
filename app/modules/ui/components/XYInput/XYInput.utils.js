@@ -1,7 +1,7 @@
-import clamp from 'lodash.clamp'
+import _ from 'lodash'
 
 export function transformCoordToPixelValue(coord) {
-  return clamp(((coord + 20) * 100) / 40, 0, 101)
+  return _.clamp(((coord + 20) * 100) / 40, 0, 101)
 }
 
 export function transformPixelValueToCoord(pixelValue) {

@@ -30,7 +30,7 @@
     "gatsby-plugin-react-helmet": "3.1.21",
     "gatsby-plugin-page-creator": "2.1.38",
     "displacejs": "1.4.1",
-    "lodash.clamp": "4.0.3"
+    "lodash": "4.17.15"
   },
   "devDependencies": {
     "cross-per-env": "1.0.5",
