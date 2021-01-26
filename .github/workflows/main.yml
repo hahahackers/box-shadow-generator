@@ -34,3 +34,14 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./public
+
+      - name: Notify
+        env:
+          MESSAGE: 'Started<br> Workflow: ${{ github.workflow }}<br> Repository: ${{ github.repository }}<br> Link: https://alextheartisan.github.io/poe-tools'
+        run: |
+          curl --request POST \
+          --url https://hook.integromat.com/${{ secrets.INTEGROMAT_KEY }} \
+          --header 'Content-Type: application/json' \
+          --data '{
+            "message": "'"$MESSAGE"'"
+          }'
