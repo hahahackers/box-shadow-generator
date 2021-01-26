@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-per-env",
-    "start:development": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "generate"
+    "start": "node .config/npm-scripts/start-app.js",
+    "build": "cross-env NODE_ENV=production webpack --config .config/webpack/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -22,20 +19,32 @@
   },
   "homepage": "https://github.com/catsonis/box-shadow-generator#readme",
   "dependencies": {
-    "gatsby": "2.18.25",
+    "dotenv": "8.2.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-helmet": "5.2.1",
-    "gatsby-plugin-alias-imports": "1.0.5",
-    "gatsby-plugin-react-helmet": "3.1.21",
-    "gatsby-plugin-page-creator": "2.1.38",
     "displacejs": "1.4.1",
     "lodash": "4.17.15"
   },
   "devDependencies": {
-    "cross-per-env": "1.0.5",
-    "@catsonis/prettier-config": "1.0.1",
-    "@catsonis/generator": "0.0.8"
+    "cross-env": "7.0.3",
+    "@typescript-eslint/parser": "4.14.1",
+    "@alextheartisan/prettier-config": "1.0.1",
+    "webpack": "4.46.0",
+    "typescript": "4.1.3",
+    "style-loader": "2.0.0",
+    "css-loader": "5.0.1",
+    "eslint": "7.18.0",
+    "file-loader": "6.2.0",
+    "mini-css-extract-plugin": "1.3.4",
+    "html-webpack-plugin": "4.5.0",
+    "fork-ts-checker-webpack-plugin": "6.0.7",
+    "clean-webpack-plugin": "3.0.0",
+    "circular-dependency-plugin": "5.2.2",
+    "typescript-plugin-css-modules": "2.8.0",
+    "tsconfig-paths-webpack-plugin": "3.3.0",
+    "webpack-dev-server": "3.11.2",
+    "ts-loader": "8.0.14",
+    "webpack-cli": "4.4.0"
   },
-  "prettier": "@catsonis/prettier-config"
+  "prettier": "@alextheartisan/prettier-config"
 }
