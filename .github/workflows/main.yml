@@ -34,13 +34,13 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./dist
 
-      - name: Notify
-        env:
-          MESSAGE: 'Started<br> Workflow: ${{ github.workflow }}<br> Repository: ${{ github.repository }}<br> Link: https://alextheartisan.github.io/poe-tools'
-        run: |
-          curl --request POST \
-          --url https://hook.integromat.com/${{ secrets.INTEGROMAT_KEY }} \
-          --header 'Content-Type: application/json' \
-          --data '{
-            "message": "'"$MESSAGE"'"
-          }'
+  notify:
+    if: always()
+    needs: [ build ]
+    name: Send notification
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: alextheartisan/notify-action@v1
+        with:
+          integromat_key: ${{ secrets.INTEGROMAT_KEY }}
+          status: ${{ needs.build.result }}
