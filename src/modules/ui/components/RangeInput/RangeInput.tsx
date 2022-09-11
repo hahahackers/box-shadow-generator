@@ -2,18 +2,18 @@ import React, { useRef } from 'react'
 
 import css from './RangeInput.module.css'
 
-export const RangeInput = props => {
+export const RangeInput = (props: any) => {
   let inputRef = useRef()
 
-  function handleChange(event) {
+  function handleChange(event: any) {
     props.onChange(Number(event.target.value), event)
   }
 
   function handleFocus() {
-    inputRef.current.select()
+    // inputRef.current.select()
   }
 
-  function handleWheel(event) {
+  function handleWheel(event: any) {
     props.onChange(Number(props.value) - Math.sign(event.deltaY), event)
   }
 

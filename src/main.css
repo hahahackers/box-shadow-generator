@@ -8,10 +8,13 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow: hidden;
+html,
+body,
+#app {
+  height: 100vh;
 }
 
-body {
-  font-family: Rubik, sans-serif;
+#app {
+  display: flex;
+  flex-direction: column;
 }

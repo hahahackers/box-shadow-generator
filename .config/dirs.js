@@ -16,10 +16,6 @@ const Dirs = {
   modules(path = '') {
     return resolve(Dirs.src('modules'), path)
   },
-
-  templates(path = '') {
-    return resolve(Dirs.root('.config/plop/templates'), path)
-  },
 }
 
 module.exports = { Dirs }

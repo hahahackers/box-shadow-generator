@@ -29,6 +29,10 @@
   justify-content: center;
 }
 
+.result div {
+  will-change: box-shadow;
+}
+
 .rectangle {
   background-color: rebeccapurple;
 }

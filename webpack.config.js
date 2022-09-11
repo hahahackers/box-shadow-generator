@@ -1,3 +1,15 @@
+const { ProvidePlugin } = require('webpack')
+const config = require('@alextheartisan/webpack-config')
+
+config.plugins.push(
+  new ProvidePlugin({
+    process: 'process/browser',
+  })
+)
+
+module.exports = config
+
+/*
 const path = require('path')
 
 const { config } = require('dotenv')
@@ -10,16 +22,18 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 config()
 
-/* -- Setup ----------------------------------------------------------------- */
+/!* -- Setup ----------------------------------------------------------------- *!/
 
 const rootDir = (dir) => path.resolve(__dirname, '../..', dir)
 
-/* -- Configuration for both `development` and `mineralion` ----------------- */
+/!* -- Configuration for both `development` and `production` ----------------- *!/
 
+/!** @type webpack.Configuration *!/
 module.exports = {
   devServer: {
     contentBase: './dist',
     hot: true,
+    port: process.env.PORT,
     open: false,
     stats: 'minimal',
   },
@@ -35,7 +49,7 @@ module.exports = {
 
     new ForkTsCheckerWebpackPlugin({
       eslint: {
-        files: 'src/**/*.{ts,tsx}',
+        files: 'src/!**!/!*.{ts,tsx}',
         options: {
           configFile: rootDir('.config/eslint/.eslintrc.js'),
           cache: true,
@@ -106,7 +120,7 @@ module.exports = {
   },
 }
 
-/* -- Configuration for `development` --------------------------------------- */
+/!* -- Configuration for `development` --------------------------------------- *!/
 
 if (process.env.NODE_ENV === 'development') {
   module.exports.mode = 'development'
@@ -114,9 +128,10 @@ if (process.env.NODE_ENV === 'development') {
   module.exports.plugins.push(new CircularDependencyPlugin({ include: /src/ }))
 }
 
-/* -- Configuration for `mineralion` ---------------------------------------- */
+/!* -- Configuration for `production` ---------------------------------------- *!/
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.mode = 'production'
   module.exports.plugins.push(new CircularDependencyPlugin({ include: /src/, failOnError: true }))
 }
+*/

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { H3 } from '@blueprintjs/core'
 
-import { NumberInput, RangeInput, Title, XYInput } from '$/ui'
+import { RangeInput, XYInput } from '$/ui'
 import { ControlsTable } from '../ControlsTable'
 import { ShapeControls } from '../ShapeControls'
 
@@ -28,15 +29,13 @@ export const BoxShadowGenerator = () => {
       <div className={css.controls}>
         <ShapeControls shape={shape} onChange={setShape} />
         <div className={css['box-shadow-controls']}>
-          <Title>Box Shadow</Title>
+          <H3>Box Shadow</H3>
 
           <ControlsTable>
             <tbody>
               <tr>
                 <td>Offset X</td>
-                <td>
-                  <NumberInput value={offsetX} onChange={setOffsetX} />
-                </td>
+                <td>{/*<NumberInput value={offsetX} onChange={setOffsetX} />*/}</td>
                 <td>px</td>
                 <td rowSpan={2}>
                   <XYInput
@@ -61,16 +60,12 @@ export const BoxShadowGenerator = () => {
               </tr>
               <tr>
                 <td>Offset Y</td>
-                <td>
-                  <NumberInput value={offsetY} onChange={setOffsetY} />
-                </td>
+                <td>{/*<NumberInput value={offsetY} onChange={setOffsetY} />*/}</td>
                 <td>px</td>
               </tr>
               <tr>
                 <td>Blur</td>
-                <td>
-                  <NumberInput value={blurRadius} onChange={setBlurRadius} />
-                </td>
+                <td>{/*<NumberInput value={blurRadius} onChange={setBlurRadius} />*/}</td>
                 <td>px</td>
                 <td>
                   <RangeInput value={blurRadius} onChange={setBlurRadius} max={20} />
@@ -83,9 +78,7 @@ export const BoxShadowGenerator = () => {
               </tr>
               <tr>
                 <td>Spread</td>
-                <td>
-                  <NumberInput value={spreadRadius} onChange={setSpreadRadius} />
-                </td>
+                <td>{/*<NumberInput value={spreadRadius} onChange={setSpreadRadius} />*/}</td>
                 <td>px</td>
                 <td>
                   <RangeInput value={spreadRadius} onChange={setSpreadRadius} max={20} />

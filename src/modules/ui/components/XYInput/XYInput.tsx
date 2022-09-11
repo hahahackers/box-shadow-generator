@@ -5,23 +5,38 @@ import { transformCoordToPixelValue, transformPixelValueToCoord } from './XYInpu
 
 import css from './XYInput.module.css'
 
-export const XYInput = props => {
-  let dragZoneRef = useRef(null)
-  let thumbRef = useRef(null)
+interface XYInputProps {
+  onChange: (x: number, y: number) => void
+  value: {
+    x: number
+    y: number
+  }
+}
+
+export const XYInput = (props: XYInputProps) => {
+  let dragZoneRef = useRef<HTMLDivElement>(null)
+  let thumbRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    let a = displace(thumbRef.current, {
-      constrain: dragZoneRef.current,
-      onMouseMove(element) {
-        let x = transformPixelValueToCoord(element.offsetLeft)
-        let y = transformPixelValueToCoord(element.offsetTop)
+    let a: any // FIXME
 
-        props.onChange(x, y)
-      }
-    })
+    if (thumbRef.current && dragZoneRef.current) {
+      a = displace(thumbRef.current, {
+        // @ts-ignore
+        constrain: dragZoneRef.current,
+        onMouseMove(element) {
+          let x = transformPixelValueToCoord(element.offsetLeft)
+          let y = transformPixelValueToCoord(element.offsetTop)
+
+          props.onChange(x, y)
+        },
+      })
+    }
 
     return () => {
-      a.destroy()
+      if (a) {
+        a.destroy()
+      }
     }
   }, [])
 

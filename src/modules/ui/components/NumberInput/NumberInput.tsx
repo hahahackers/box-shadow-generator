@@ -1,32 +1,39 @@
-import React, { useRef } from 'react'
+import React, { DetailedHTMLProps, InputHTMLAttributes, useRef } from 'react'
 
 import css from './NumberInput.module.css'
 
-export const NumberInput = props => {
-  let inputRef = useRef()
+interface NumberInputProps
+  extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {}
 
-  function handleChange(event) {
-    props.onChange(Number(event.target.value), event)
+export const NumberInput = ({ value, onChange, ...rest }: NumberInputProps) => {
+  let ref = useRef<HTMLInputElement>(null)
+
+  function handleChange(event: any) {
+    event.target.value = Number(event.target.value)
+
+    onChange?.(event)
   }
 
-  function handleFocus() {
-    inputRef.current.select()
-  }
-
-  function handleWheel(event) {
-    props.onChange(Number(props.value) - Math.sign(event.deltaY), event)
-  }
+  // function handleFocus() {
+  //   // inputRef.current.select()
+  // }
+  //
+  // function handleWheel(event) {
+  //   onChange(Number(value) - Math.sign(event.deltaY), event)
+  // }
 
   return (
     <input
-      {...props}
+      {...rest}
       className={css.root}
-      ref={inputRef}
+      ref={ref}
       type="text"
-      value={props.value}
+      value={value}
       onChange={handleChange}
-      onFocus={handleFocus}
-      onWheel={handleWheel}
+      // value={props.value}
+      // onChange={handleChange}
+      // onFocus={handleFocus}
+      // onWheel={handleWheel}
     />
   )
 }

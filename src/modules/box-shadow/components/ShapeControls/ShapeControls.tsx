@@ -1,12 +1,13 @@
 import React from 'react'
+import { H2 } from '@blueprintjs/core'
 
-import { NumberInput, RangeInput, Title } from '$/ui'
+import { RangeInput } from '$/ui'
 import { ControlsTable } from '../ControlsTable'
 
 import css from './ShapeControls.module.css'
 
-export const ShapeControls = (props) => {
-  function handleChange(value, event) {
+export const ShapeControls = (props: any) => {
+  function handleChange(value: any, event: any) {
     props.onChange({
       ...props.shape,
       [event.target.name]: value,
@@ -15,13 +16,13 @@ export const ShapeControls = (props) => {
 
   return (
     <div className={css.root}>
-      <Title>Rectangle</Title>
+      <H2>Rectangle</H2>
       <ControlsTable>
         <tbody>
           <tr>
             <td>Width</td>
             <td>
-              <NumberInput name="width" value={props.shape.width} onChange={handleChange} />
+              {/*<NumberInput name="width" value={props.shape.width} onChange={handleChange} />*/}
             </td>
             <td>px</td>
             <td>
@@ -36,7 +37,7 @@ export const ShapeControls = (props) => {
           <tr>
             <td>Height</td>
             <td>
-              <NumberInput name="height" value={props.shape.height} onChange={handleChange} />
+              {/*<NumberInput name="height" value={props.shape.height} onChange={handleChange} />*/}
             </td>
             <td>px</td>
             <td>
